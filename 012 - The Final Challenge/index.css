@@ -1,0 +1,189 @@
+@import url('https://fonts.googleapis.com/css?family=Nunito:400,700&display=swap');
+
+/* --- Reset & Base --- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Nunito', sans-serif;
+    display: grid;
+    grid-template-columns: 15% auto;
+    height: 100vh;
+    background: #F8FAFC;
+    color: #111827;
+}
+
+/* --- Sidebar --- */
+aside.sidebar {
+    background: #1E293B;
+    padding: 2em 1em;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5em;
+    color: #fff;
+}
+
+aside.sidebar h2.logo {
+    font-weight: 700;
+    font-size: 1.2em;
+    margin-bottom: 2em;
+    text-align: center;
+}
+
+aside.sidebar nav a {
+    color: #CBD5E1;
+    text-decoration: none;
+    display: block;
+    padding: 0.8em 1em;
+    border-radius: 0.5em;
+    transition: 0.3s;
+}
+
+aside.sidebar nav a.active,
+aside.sidebar nav a:hover {
+    background: #3B82F6;
+    color: #fff;
+}
+
+/* --- Main Area --- */
+main.main {
+    padding: 1.5em;
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+    overflow-y: auto;
+}
+
+/* --- Topbar --- */
+header.topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header.topbar h1 {
+    font-size: 1.5em;
+}
+
+header.topbar .user-info {
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+}
+
+header.topbar .avatar {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+/* --- Stat Cards --- */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1em;
+}
+
+.stat-card {
+    background: #fff;
+    padding: 1em;
+    border-radius: 1em;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    transition: transform 0.3s;
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+}
+
+.stat-card h3 {
+    color: #8B5CF6;
+    font-size: 0.9em;
+    margin-bottom: 0.5em;
+}
+
+.stat-card .value {
+    font-size: 1.4em;
+    font-weight: 700;
+    color: #111827;
+}
+
+/* --- Table / Content Card --- */
+.content-card {
+    background: #fff;
+    padding: 1em;
+    border-radius: 1em;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.content-card h2 {
+    font-size: 1.2em;
+    color: #3B82F6;
+    margin-bottom: 1em;
+}
+
+.content-card table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.content-card th, .content-card td {
+    padding: 0.7em;
+    text-align: left;
+}
+
+.content-card th {
+    border-bottom: 2px solid #E5E7EB;
+    font-weight: 700;
+}
+
+.content-card td {
+    border-bottom: 1px solid #E5E7EB;
+}
+
+.paid {
+    color: #10B981;
+    font-weight: 700;
+}
+
+.pending {
+    color: #F59E0B;
+    font-weight: 700;
+}
+
+/* --- Scrollbar for main area --- */
+main.main::-webkit-scrollbar {
+    width: 6px;
+}
+
+main.main::-webkit-scrollbar-thumb {
+    background: #3B82F6;
+    border-radius: 3px;
+}
+
+/* --- Responsive --- */
+@media (max-width: 768px) {
+    body {
+        grid-template-columns: 1fr;
+    }
+    
+    aside.sidebar {
+        flex-direction: row;
+        justify-content: space-around;
+        padding: 1em;
+    }
+
+    header.topbar {
+        flex-direction: column;
+        gap: 1em;
+    }
+
+    .stats-grid {
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    }
+}
